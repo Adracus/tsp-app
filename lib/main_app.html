@@ -1,0 +1,26 @@
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_slider.html">
+<link rel="import" href="component/tour_drawer.html">
+
+<polymer-element name="main-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div horizontal layout>
+      <tour-drawer id="drawer" width="{{width}}" height="{{height}}"></tour-drawer>
+      <div flex>
+        <p>The total number of tours is {{possibilities}}</p>
+        <paper-slider min="3" max="10" immediateValue="{{noOfNodes}}" pin snaps></paper-slider>
+        <paper-button on-click="{{refresh}}">Refresh</paper-button>
+        <p><strong>Points:</strong></p>
+        <p>{{pointString}}</p>
+      </div>
+    </div>
+  </template>
+  <script type="application/dart" src="main_app.dart"></script>
+</polymer-element>
